@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const { registerRouter } = require("./routes/registerRouter");
+const { loginRouter } = require("./routes/loginRouter");
 
-app.get("/123", (req, res) => {
-  res.send("Hello World!");
+
+app.get("/", (req, res) => {
+  res.send("Landing Page");
 });
 
 /**
@@ -17,7 +21,16 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 
-const mongoose = require("mongoose");
+/**
+ * Router
+ */
+// app.use("/api/users", usersRouter);
+app.use("/api", registerRouter);
+app.use("/api", loginRouter);
+
+/**
+ * DB
+ */
 mongoose
   .connect("mongodb://root:djffpqjffp123@43.201.18.76:27017", {
     useNewUrlParser: true,
