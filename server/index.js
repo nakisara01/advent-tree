@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const { registerRouter } = require("./routes/registerRouter");
 const { loginRouter } = require("./routes/loginRouter");
 
+
 app.get("/", (req, res) => {
   res.send("Landing Page");
 });
