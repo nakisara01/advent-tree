@@ -1,13 +1,11 @@
-import './App.css';
-import SojuTree from './component/SojuTree.js';
-import NavBar from './component/NavBar.js';
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Auth from './hoc/auth';
 
 /* Components */
-import MainPage from './components/MainPage';
-import LoginPage from './components/LoginPage';
+import MainPage from "./component/MainPage";
+// import LoginPage from "./component/LoginPage";
 
 function App() {
   // const AuthMainPage = Auth(MainPage, false);
@@ -16,8 +14,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/" component={MainPage} />
-          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/" elements={<MainPage />} />
+          {/* <Route exact path="/login" elements={<LoginPage />} /> */}
           {/* <Route exact path="/" element={<AuthMainPage />} />
         <Route exact path="/login" element={<AuthLoginPage />} /> */}
         </Routes>
