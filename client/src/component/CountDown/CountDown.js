@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Clock from "./CountDown/Clock";
+import Clock from "./Clock";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./CountDown.css";
 
-function App() {
+function CountDown() {
   const [timerDays, settimerDays] = useState();
   const [timerHours, settimerHours] = useState();
   const [timerMinutes, settimerMinutes] = useState();
@@ -56,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+export default CountDown;
